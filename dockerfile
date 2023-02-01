@@ -1,4 +1,4 @@
-# Base image
+# Base images
 FROM centos:7 as build
 
 # install Java-11
