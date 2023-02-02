@@ -4,7 +4,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('docker')
     }
     stages {
-        stage('Build docker image') {
+        stage('Build docker images') {
             steps {
                 sh 'docker system prune -a --force'
                 sh 'docker build -t hemanth1337/newcalc .'
