@@ -1,8 +1,5 @@
 # Base images taken from centos
-FROM centos:7 as build
-
-# install Java-11
-RUN yum -y install java-11-openjdk-devel
+FROM maven:3.6.3-jdk-8-slim AS build
 
 # creating a directory
 RUN mkdir /calc
@@ -14,7 +11,6 @@ WORKDIR /calc
 COPY . /calc
 
 # Build App
-RUN yum -y install maven
 RUN mvn package
 
 # Install tomcat
