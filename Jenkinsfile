@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build docker image') {
             steps {
+                sh 'docker system prune -a --force'
                 sh 'docker build -t hemanth1337/newcalc .'
             }   
         }
