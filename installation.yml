@@ -15,4 +15,5 @@
      apt:
        name: awscli
        state: present
+       
 ...
