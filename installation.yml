@@ -1,0 +1,12 @@
+---
+- name: Targeting the host
+  hosts: g1
+  become: yes
+
+  tasks:
+   - name: unzip
+     apt:
+       name: unzip
+       state: present
+       
+...
