@@ -1,0 +1,41 @@
+---
+- name: Targeting the host
+  hosts: g1
+  become: yes
+
+  tasks:
+   - name: unzip
+     yum:
+       name: unzip
+       state: present
+
+  tasks:
+   - name: Install AWS CLI
+     package:
+       name: awscli
+       state: present
+
+  tasks:
+    - name: Download kops binary
+      command: curl -LO https://github.com/kubernetes/kops/releases/download/{{ kops_version }}/kops-linux-amd64
+      register: kops_download
+      changed_when: kops_download.rc != 0
+
+    - name: Install kops binary
+      command: chmod +x kops-linux-amd64 && sudo mv kops-linux-amd64 /usr/local/bin/kops
+      when: kops_download.rc == 0
+
+    - name: Download kubectl binary
+      command: curl -LO https://dl.k8s.io/release/{{ kubectl_version }}/bin/linux/amd64/kubectl
+      register: kubectl_download
+      changed_when: kubectl_download.rc != 0
+
+    - name: Install kubectl binary
+      command: chmod +x kubectl && sudo mv kubectl /usr/local/bin/kubectl
+      when: kubectl_download.rc == 0
+
+  vars:
+    kops_version: 1.23.0
+    kubectl_version: 1.22.2
+
+...  
