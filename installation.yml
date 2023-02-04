@@ -9,11 +9,10 @@
        name: unzip
        state: present
 
-
   tasks:
    - name: Install AWS CLI
      apt:
        name: awscli
        state: present
-       
+
 ...
