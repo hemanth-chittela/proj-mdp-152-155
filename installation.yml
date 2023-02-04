@@ -23,7 +23,7 @@
       dest: /home/centos
     
   - name: Make kops executable
-    command: chmod +x kops-linux-amd64
-    command: sudo mv kops /usr/local/bin/kubectl
+    command: chmod +x kops
+    command: sudo mv kops /usr/local/bin/kops
 
 ...
