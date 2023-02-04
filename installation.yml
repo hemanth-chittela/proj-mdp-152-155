@@ -22,7 +22,7 @@
       url: https://github.com/kubernetes/kops/releases/download/{{ kops_version }}/kops-linux-amd64
       dest: /root/kops
     vars:
-      kops_version: "1.20.0"
+      kops_version: "{{ kops_version }}"
   - name: Make kops executable
     file:
       path: /root/kops
