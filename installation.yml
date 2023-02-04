@@ -18,15 +18,15 @@
 
   tasks:
     - name: Download kops binary
-    shell: curl -LO https://dl.k8s.io/release/1.20.0/bin/linux/amd64/kops
-    args:
+      shell: curl -LO https://dl.k8s.io/release/1.20.0/bin/linux/amd64/kops
+      args:
       executable: /bin/bash
-  - name: Make kops binary executable
-    file:
-      path: /usr/local/bin/kops
-      state: link
-      src: /root/kops
-      owner: root
-      group: root
-      mode: 0755
+    - name: Make kops binary executable
+      file:
+        path: /usr/local/bin/kops
+        state: link
+        src: /root/kops
+        owner: root
+        group: root
+        mode: 0755
 ...
