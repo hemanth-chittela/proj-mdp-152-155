@@ -22,13 +22,13 @@
 
   tasks:
   - name: execute kops
-     path: /home/centos
-     mode: +x
+      path: /home/centos
+      mode: +x
 
   tasks:
   - name: move kops      
-     command:  mv /home/centos /usr/local/bin/kops
-     mode: +x
+      command:  mv /home/centos /usr/local/bin/kops
+      mode: +x
 
 
 ...
