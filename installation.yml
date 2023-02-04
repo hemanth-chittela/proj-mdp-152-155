@@ -23,7 +23,7 @@
       changed_when: kops_download.rc != 0
       
     - name: Install kops binary
-      command: chmod +x kops-linux-amd64 && sudo mv kops-linux-amd64 /usr/local/bin/kops
+      command: chmod +x kops && sudo mv /usr/local/bin/kops
       when: kops_download.rc == 0
 
   tasks: 
