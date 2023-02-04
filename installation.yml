@@ -22,12 +22,10 @@
       command: chmod +x kops
       command: sudo mv kops /usr/local/bin/kops
 
-  task: 
+  tasks: 
     - name: Download and install kubectl
       command: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
       command: chmod +x kubectl
       command: sudo mv kubectl /usr/local/bin/kubectl
-
-    
 
 ...
