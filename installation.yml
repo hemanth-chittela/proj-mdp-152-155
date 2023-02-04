@@ -19,10 +19,9 @@
   tasks:
   - name: Download kops binary
     get_url:
-      url: https://github.com/kubernetes/kops/releases/download/{{ kops_version }}/kops-linux-amd64
+      url: https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
       dest: /root/kops
-    vars:
-      kops_version: "1.20.0"
+    
   - name: Make kops executable
     file:
       path: /root/kops
