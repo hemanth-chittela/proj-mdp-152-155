@@ -18,17 +18,19 @@
 
   tasks:
     - name: Download kops binary
-      shell: curl -LO https://dl.k8s.io/release/1.20.0/bin/linux/amd64/kops
-      args:
-        executable: /bin/bash
-    - name: Make kops binary executable
+      get_url:
+        url: https://github.com/kubernetes/kops/releases/download/1.20.0/kops-linux-amd64
+        dest: /root/kops
+    
+    - name: Make kops executable
       file:
-        path: /usr/local/bin/kops
-        state: link
-        src: /root/kops
-        owner: root
-        group: root
+        path: /root/kops
         mode: 0755
+    - name: Link kops to /usr/local/bin
+      file:
+        src: /root/kops
+       dest: /usr/local/bin/kops
+        state: link
 
 
 ...
