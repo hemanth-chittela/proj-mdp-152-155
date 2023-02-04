@@ -21,10 +21,10 @@
       curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-darwin-amd64
 
    tasks:
-  - name: execute kops
+    - name: execute kops
       path: /home/centos
       mode: +x
    tasks:
-  - name: move kops      
-    command:  mv /home/centos /usr/local/bin/kops
+    - name: move kops      
+      command:  mv /home/centos /usr/local/bin/kops
 ...
