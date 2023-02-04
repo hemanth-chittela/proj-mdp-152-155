@@ -23,13 +23,7 @@
       dest: /home/centos
     
   - name: Make kops executable
-    file:
-      path: /home/centos
-      mode: 0755
-  - name: Link kops to /usr/local/bin
-    file:
-      src: /home/centos
-      dest: /usr/local/bin/kops
-      state: link
+    command: chmod +x kops-linux-amd64
+    command: sudo mv kops /usr/local/bin/kubectl
 
 ...
