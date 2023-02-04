@@ -11,7 +11,7 @@
 
   tasks:
    - name: Install AWS CLI
-     apt:
+     package:
        name: awscli
        state: present
 
