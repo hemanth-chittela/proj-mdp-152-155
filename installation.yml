@@ -18,15 +18,19 @@
 
   tasks:
     - name: Download and install kops
-      shell: |
-          curl -LO https://github.com/kubernetes/kops/releases/download/1.22.1/kops-linux-amd64
+      uri: 
+          url: https://github.com/kubernetes/kops/releases/download/1.22.1/kops-linux-amd64
+          method: GET
+          register: result
           chmod +x kops-linux-amd64
           mv kops-linux-amd64 /usr/local/bin/kops
 
   tasks:
     - name: Download and install kubectl
-      shell: |
-          curl -LO https://dl.k8s.io/release/1.22.2/bin/linux/amd64/kubectl
+      uri: 
+          url: https://dl.k8s.io/release/1.22.2/bin/linux/amd64/kubectl
+          method: GET
+          register: result
           chmod +x kubectl
           mv kubectl /usr/local/bin/kubectl
 
