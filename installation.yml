@@ -5,8 +5,8 @@
 
   tasks:
    - name: unzip
-     apt:
+     yum:
        name: unzip
        state: present
-       
+
 ...
