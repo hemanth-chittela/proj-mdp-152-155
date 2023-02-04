@@ -20,15 +20,15 @@
   - name: Download kops binary
     get_url:
       url: https://github.com/kubernetes/kops/releases/download/v1.26.0-beta.1/kops-linux-amd64
-      dest: /root/kops
+      dest: /home/centos
     
   - name: Make kops executable
     file:
-      path: /root/kops
+      path: /home/centos
       mode: 0755
   - name: Link kops to /usr/local/bin
     file:
-      src: /root/kops
+      src: /home/centos
       dest: /usr/local/bin/kops
       state: link
 
