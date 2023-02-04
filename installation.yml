@@ -26,9 +26,12 @@
     mode: +x
 
   tasks:
-  - name: move kops      
-    command:  mv /home/centos /usr/local/bin/kops
-    mode: +x
+  - name: mv kops
+    file:
+      src: /home/centos
+      dest: /usr/local/bin/kops
+      state: link
+      mode: +x
 
 
 ...
