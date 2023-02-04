@@ -35,5 +35,6 @@
     - name: Install kubectl binary
       command: chmod +x kubectl && sudo mv kubectl /usr/local/bin/kubectl
       when: kubectl_download.rc == 0
+      ignore_errors: yes
 
 ...
