@@ -29,7 +29,7 @@
     - name: Link kops to /usr/local/bin
       file:
         src: /root/kops
-       dest: /usr/local/bin/kops
+       `dest: /usr/local/bin/kops
         state: link
 
 
