@@ -16,9 +16,6 @@
        state: present
 
 
-  - name: Install kops
-  hosts: all
-  become: yes
   tasks:
   - name: Download kops binary
     get_url:
