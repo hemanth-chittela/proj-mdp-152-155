@@ -21,88 +21,22 @@
       name: python3-pip
       state: present
       
-
-  
    - name: Download Kops
-  get_url:
-    url: https://github.com/kubernetes/kops/releases/download/{{ kops_version }}/kops-linux-amd64
-    dest: /usr/local/bin/kops
-    mode: 0755
+      get_url:
+       url: https://github.com/kubernetes/kops/releases/download/{{ kops_version }}/kops-linux-amd64
+       dest: /usr/local/bin/kops
+       mode: 0755
 
-- name: Make Kops executable
-  command: chmod +x /usr/local/bin/kops
+   - name: Make Kops executable
+     command: chmod +x /usr/local/bin/kops
 
-- name: Verify Kops installation
-  command: kops version
-  register: kops_version_result
+   - name: Verify Kops installation
+     command: kops version
+     register: kops_version_result
 
-- name: Display Kops version
-  debug:
-    var: kops_version_result.stdout_lines
-In the above code, the variable "kops_version" is used to specify the version of Kops to be installed. The first task uses the "get_url" module to download the Kops binary from the specified URL, and saves it to the /usr/local/bin/kops directory. The second task makes the binary executable, and the third task verifies the installation by running the "kops version" command. Finally, the last task uses the "debug" module to display the version of Kops that was installed.
-
-
-
-
-Hemanth Chittela
-install kops using pip module ansible
-Here is an example of Ansible code for installing Kops using the pip module:
-
-yaml
-Copy code
-- name: Install Kops
-  pip:
-    name: kops
-    state: present
-
-- name: Verify Kops installation
-  command: kops version
-  register: kops_version_result
-
-- name: Display Kops version
-  debug:
-    var: kops_version_result.stdout_lines
-In the above code, the first task uses the pip module to install Kops, and the state parameter is set to present to ensure that Kops is installed. The second task verifies the installation by running the kops version command, and the third task uses the debug module to display the version of Kops that was installed.
-
-
-
-
-Hemanth Chittela
-it is saying that pip not installed 
-If the pip module is not installed, you can install it by using the apt or yum module, depending on the operating system you are using. Here's an example of how to install pip on Ubuntu using the apt module:
-
-yaml
-Copy code
-- name: Install pip
-  apt:
-    name: python-pip
-    state: present
-And here's an example of how to install pip on CentOS using the yum module:
-
-yaml
-Copy code
-- name: Install pip
-  yum:
-    name: python2-pip
-    state: present
-
-
-- name: Download Kops
-  get_url:
-    url: https://github.com/kubernetes/kops/releases/download/{{ kops_version }}/kops-linux-amd64
-    dest: /usr/local/bin/kops
-    mode: 0755
-
-- name: Make Kops executable
-  command: chmod +x /usr/local/bin/kops
-
-- name: Verify Kops installation
-  command: kops version
-  register: kops_version_result
-
-- name: Display Kops version
-  debug:
-    var: kops_version_result.stdout_lines
+   - name: Display Kops version
+     debug:
+     var: kops_version_result.stdout_lines
 
 
 
