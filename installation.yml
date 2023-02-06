@@ -23,7 +23,7 @@
       
 
   
-   - name: install kops directly
+   - name: install kops directly'
      pip: 
        name: kops
        state: present
