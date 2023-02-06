@@ -17,8 +17,9 @@
 
   
   - name: install pip
-    package: 
+    yum: 
       name: python2-pip
+      state: present
       
 
   
