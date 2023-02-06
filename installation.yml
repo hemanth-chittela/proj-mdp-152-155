@@ -20,6 +20,8 @@
     get_url: 
        url: https://github.com/kubernetes/kops/releases/download/v1.25.3/kops-linux-amd64
        dest: /usr/local/bin/kops
+       remote_src: yes
+
 
   tasks:
   - name: installing kops in the following directory
