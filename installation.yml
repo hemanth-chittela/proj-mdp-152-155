@@ -17,9 +17,9 @@
 
   tasks:
   - name: install pip
-    yum: 
-      name: python3-pip
-      state: present
+    package: 
+      name: python2-pip
+      
 
   tasks:
   - name: install kops directly
