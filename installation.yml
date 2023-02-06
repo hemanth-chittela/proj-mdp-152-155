@@ -28,8 +28,8 @@
        name: kops
        state: present
 
-  - name: Install KUBECTL
-    shell: |
+   - name: Install KUBECTL
+     shell: |
       curl -LO https://dl.k8s.io/release/stable.txt
       VERSION=$(cat stable.txt)
       curl -LO https://dl.k8s.io/$VERSION/bin/linux/amd64/kubectl
