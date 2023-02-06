@@ -23,10 +23,10 @@
       
 
   
-   - name: install kops directly'
-     pip: 
-       name: kops
-       state: present
+   - name: Install KOPS
+     pip:
+      name: kops
+      state: present
 
    - name: Install KUBECTL
      shell: |
