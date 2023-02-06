@@ -16,7 +16,7 @@
        state: present
 
   tasks:
-  - name: install kops
+  - name: install kops directly
     pip: 
        name: kops
        state: present
