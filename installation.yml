@@ -17,14 +17,14 @@
 
   
    - name: install pip
-    yum: 
+     yum: 
       name: python2-pip
       state: present
       
 
   
    - name: install kops directly
-    pip: 
+     pip: 
        name: kops
        state: present
          
