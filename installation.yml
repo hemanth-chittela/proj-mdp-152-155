@@ -19,24 +19,11 @@
    - name: install pip
      package: 
       name: python3-pip
-      state: present
       
-   - name: Download Kops
-      get_url:
-       url: https://github.com/kubernetes/kops/releases/download/{{ kops_version }}/kops-linux-amd64
-       dest: /usr/local/bin/kops
-       mode: 0755
-
-   - name: Make Kops executable
-     command: chmod +x /usr/local/bin/kops
-
-   - name: Verify Kops installation
-     command: kops version
-     register: kops_version_result
-
-   - name: Display Kops version
-     debug:
-     var: kops_version_result.stdout_lines
+   - name: Install KOPS directly
+     pip:
+      name: kops
+      state: present
 
 
 
