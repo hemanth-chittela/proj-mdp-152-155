@@ -10,7 +10,7 @@
        state: present
 
   tasks:
-   - name: Install AWS CLI
+   - name: Install AWS CLI'
      package:
        name: awscli
        state: present
