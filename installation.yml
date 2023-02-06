@@ -9,19 +9,19 @@
        name: unzip
        state: present
 
-  tasks:
+  
    - name: Install AWS CLI'
      package:
        name: awscli
        state: present
 
-  tasks:
+  
   - name: install pip
     package: 
       name: python2-pip
       
 
-  tasks:
+  
   - name: install kops directly
     pip: 
        name: kops
