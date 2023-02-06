@@ -22,7 +22,7 @@
        dest: /usr/local/bin/kops
 
   tasks:
-  - name: installing kops
+  - name: installing kops in the following directory
     command: chmod +x /usr/local/bin/kops
 
   
