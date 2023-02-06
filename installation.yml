@@ -16,6 +16,12 @@
        state: present
 
   tasks:
+  - name: install pip
+    yum: 
+      name: python3-pip
+      state: present
+
+  tasks:
   - name: install kops directly
     pip: 
        name: kops
