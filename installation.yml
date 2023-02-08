@@ -19,10 +19,10 @@
    - name: download kops 
      get_url: 
       url: https://github.com/kubernetes/kops/releases/tag/v1.25.3/kops-linux-amd64
-      dest: /usr/local/sbin/kops
+      dest: /usr/local/bin/kops
 
    - name: execute kops
-     command: mode +x /usr/local/sbin/kops
+     command: chmod +x /usr/local/bin/kops
 
 
 
