@@ -18,13 +18,19 @@
 
    - name: download kops 
      get_url: 
-      url: https://github.com/kubernetes/kops/releases/download/v1.25.3/kops-darwin-arm64
+      url: https://github.com/kubernetes/kops/releases/tag/v1.25.3/kops-linux-amd64
       dest: /usr/local/bin/kops
 
    - name: execute kops
      command: chmod +x /usr/local/bin/kops
 
-
+   - name: Downloading KUBECTL
+     get_url:
+      url: https://dl.k8s.io/release/v1.26.1/bin/linux/amd64/kubectl
+      dest: /usr/local/bin/kubectl
+      
+   - name: kubectl pathway
+     command: chmod +x /usr/local/bin/kubectl
 
          
 
