@@ -18,7 +18,7 @@
 
    - name: download kops 
      get_url: 
-      url: https://github.com/kubernetes/kops/releases/tag/v1.25.3/kops-linux-amd64
+      url: https://github.com/kubernetes/kops/releases/download/v1.25.3/kops-darwin-arm64
       dest: /usr/local/bin/kops
 
    - name: execute kops
