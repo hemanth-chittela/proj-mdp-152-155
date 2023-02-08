@@ -22,9 +22,7 @@
       dest: /usr/local/sbin/kops
 
    - name: execute kops
-     command: chmod 0664 /usr/local/sbin/kops
-     warn:    false
-     command: chmod +x /usr/local/sbin/kops
+     command: mode +x /usr/local/sbin/kops
 
 
 
