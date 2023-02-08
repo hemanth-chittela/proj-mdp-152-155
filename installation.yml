@@ -16,16 +16,12 @@
        name: awscli
        state: present
 
-   - name: download kops 
+   - name: download and install kops 
      shell: |
       curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
       chmod +x kops
       sudo mv kops /usr/local/bin/kops
 
-      
-
-   - name: execute kops
-     command: chmod +x /usr/local/bin/kops
 
    - name: Downloading KUBECTL
      get_url:
