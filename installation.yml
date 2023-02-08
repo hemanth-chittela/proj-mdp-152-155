@@ -2,7 +2,7 @@
 - name: Targeting the host
   hosts: g1
   become: yes
-  gather_facts: fasle
+  gather_facts: false
 
   tasks:
    - name: unzip
