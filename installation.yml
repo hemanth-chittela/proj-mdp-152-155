@@ -32,8 +32,10 @@
      command: chmod +x /usr/local/bin/kubectl
 
    - name: creating a cluster
-        hosts: g1
-        shell: kops create cluster --state=s3://k8-project-10002 --zones=us-east-1a,us-east-1b --node-count=2 --name=project.k8s.local --yes
+     shell: kops create cluster --state=s3://k8-project-10002 --zones=us-east-1a,us-east-1b --node-count=2 --name=project.k8s.local --yes --ssh-public-key=/home/centos/keys.pub
+
+...
+
 
          
 
