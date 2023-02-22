@@ -1,0 +1,15 @@
+---
+- name: Targeting the host
+  hosts: g1
+  become: yes
+
+
+tasks:
+
+   - name: Deleting cluster 
+     shell: /usr/local/bin/kops validate cluster --state=s3://nw-prj
+     
+
+
+...
+
