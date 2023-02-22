@@ -1,5 +1,5 @@
 ---
- - name: deleting the cluster
+ - name: deleting the clusters
    hosts: g1
    become: yes
 
