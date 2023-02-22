@@ -7,7 +7,7 @@
   tasks:
 
    - name: Validating Cluster
-     shell: /usr/local/bin/kops validate cluster --state=s3://nw-prj
+     shell: kops validate cluster --state=s3://nw-prj
      
      
 ...
