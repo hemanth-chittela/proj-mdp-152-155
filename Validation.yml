@@ -4,12 +4,10 @@
   become: yes
 
 
-tasks:
+  tasks:
 
-   - name: Deleting cluster 
+   - name: Validating Cluster
      shell: /usr/local/bin/kops validate cluster --state=s3://nw-prj
      
-
-
+     
 ...
-
