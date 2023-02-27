@@ -1,0 +1,69 @@
+---
+
+- name: update server
+  hosts: localhost
+  become: yes
+
+
+  tasks: 
+  
+  - name: ensure epel-release is present
+    package: 
+      name: epel-release
+      state: present
+
+
+  - name: ensure pip is present
+    package: 
+       name: python-pip
+       state: present
+
+
+  - name: Install boto3 and botocore with pip3 module
+    vars:
+        ansible_python_interpreter: /usr/bin/python3
+    pip:
+      name: 
+      - boto3
+      - botocore
+
+
+
+  - name: ensure bucket is created
+    vars:
+        ansible_python_interpreter: /usr/bin/python3
+    s3_bucket: 
+      name: chum-bucket1337
+      state: present
+    environment:
+      KOPS_STATE_STORE: s3://chum-bucket1337
+
+
+- name: update web servers
+  hosts: localhost
+
+  tasks: 
+  - name: Create cluster
+    shell: kops create cluster --state=s3://chum-bucket1337 --zones=us-east-1a,us-east-1b --node-count=2 --name=dobby.k8s.local --yes
+
+
+...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
