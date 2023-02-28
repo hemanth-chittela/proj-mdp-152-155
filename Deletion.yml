@@ -1,0 +1,14 @@
+---
+ - name: deleting the clusters
+   hosts: localhost
+
+  
+
+   tasks:
+
+   - name: Deleting cluster 
+     shell:kops delete cluster --name=dobby.k8s.local --state=s3:chum-bucket1337 --yes
+     
+     
+     
+...
