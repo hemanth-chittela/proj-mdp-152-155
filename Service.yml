@@ -6,11 +6,11 @@ metadata:
   name: calculator-service
 spec:
   type: LoadBalancer
-  port:
+  ports:
   - port: 80
     targetPort: 8080
-    selector:
-      app: calc
+  selector:
+    app: calc
 
 
 
