@@ -1,5 +1,5 @@
 # K8s for calculator app /image
-apiVersion: apps/v1
+apiVersion: apps/v2
 kind: Deployment
 metadata:
   name: calculator-app
