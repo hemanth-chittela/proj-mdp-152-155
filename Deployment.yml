@@ -5,8 +5,8 @@ metadata:
   name: calc-deployment
 spec:
   selector:
-  matchLabels:
-    app: calc
+    matchLabels:
+      app: calc
   replicas: 2
   template:
     metadata:
