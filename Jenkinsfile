@@ -49,7 +49,7 @@ pipeline {
         echo 'deploying.....'
         sh "kubectl apply -f Deployment.yml"
         sh "kubectl apply -f Service.yml"
-        sh "kubectl rollout restart deployment.apps/calculator-app"
+        sh "kubectl rollout restart deployment.apps/calc-deployment"
     }
   }
  }
